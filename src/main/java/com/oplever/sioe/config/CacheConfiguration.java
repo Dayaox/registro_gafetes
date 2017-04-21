@@ -43,6 +43,7 @@ public class CacheConfiguration {
             cm.createCache(com.oplever.sioe.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(com.oplever.sioe.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(com.oplever.sioe.domain.Personal.class.getName(), jcacheConfiguration);
+            cm.createCache(com.oplever.sioe.domain.Personal2.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

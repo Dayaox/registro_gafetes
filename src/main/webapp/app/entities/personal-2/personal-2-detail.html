@@ -1,0 +1,48 @@
+
+<div>
+    <h2><span>Personal 2</span> {{vm.personal2.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Zona</span></dt>
+        <dd>
+            <span>{{vm.personal2.distrito}}</span>
+        </dd>
+        <dt><span>Coordinacion</span></dt>
+        <dd>
+            <span>{{vm.personal2.municipio}}</span>
+        </dd>
+        <dt><span>Cargo</span></dt>
+        <dd>
+            <span>{{vm.personal2.cargo}}</span>
+        </dd>
+        <dt><span>Nombre</span></dt>
+        <dd>
+            <span>{{vm.personal2.nombre}}</span>
+        </dd>
+        <!--<dt><span>Tipo</span></dt>
+        <dd>
+            <span>{{vm.personal2.tipo}}</span>
+        </dd>-->
+        <dt><span>Foto</span></dt>
+        <dd>
+            <div ng-if="vm.personal2.foto">
+                <a ng-click="vm.openFile(vm.personal2.fotoContentType, vm.personal2.foto)">
+                    <img data-ng-src="{{'data:' + vm.personal2.fotoContentType + ';base64,' + vm.personal2.foto}}" style="max-width: 100%;" alt="personal2 image"/>
+                </a>
+                <!--{{vm.personal2.fotoContentType}}, {{vm.byteSize(vm.personal2.foto)}}-->
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <!--<button type="button" ui-sref="personal-2-detail.edit({id:vm.personal2.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>-->
+</div>

@@ -1,13 +1,13 @@
 <div>
-    <h2>Personal Consejos Municipales</h2>
+    <h2>Personal Operativo</h2>
     <jhi-alert></jhi-alert>
     <!--<div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="personal.new" >
+                <button class="btn btn-primary" ui-sref="personal-2.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span >
-                        Agregar
+                        Create new Personal 2
                     </span>
                 </button>
             </div>
@@ -19,45 +19,45 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <!--<th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
-                    <th jh-sort-by="distrito"><span>Distrito</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="municipio"><span>Municipio</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="distrito"><span>Zona</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="municipio"><span>Coordinacion</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="cargo"><span>Cargo</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="nombre"><span>Nombre</span> <span class="glyphicon glyphicon-sort"></span></th>
-                  <!--  <th jh-sort-by="tipo"><span>Tipo</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="tipo"><span>Tipo</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <th jh-sort-by="foto"><span>Foto</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="personal in vm.personals track by personal.id">
-                    <!--<td><a ui-sref="personal-detail({id:personal.id})">{{personal.id}}</a></td>-->
-                    <td>{{personal.distrito}}</td>
-                    <td>{{personal.municipio}}</td>
-                    <td>{{personal.cargo}}</td>
-                    <td>{{personal.nombre}}</td>
-                  <!--  <td>{{personal.tipo}}</td>-->
+                <tr ng-repeat="personal2 in vm.personal2S track by personal2.id">
+                  <!--  <td><a ui-sref="personal-2-detail({id:personal2.id})">{{personal2.id}}</a></td>-->
+                    <td>{{personal2.distrito}}</td>
+                    <td>{{personal2.municipio}}</td>
+                    <td>{{personal2.cargo}}</td>
+                    <td>{{personal2.nombre}}</td>
+                  <!--  <td>{{personal2.tipo}}</td>-->
                     <td>
-                        <a ng-if="personal.foto" >
-                            <img data-ng-src="{{'data:' + personal.fotoContentType + ';base64,' + personal.foto}}" style="max-height: 30px;" alt="personal image"/>
+                        <a ng-if="personal2.foto" ng-click="vm.openFile(personal2.fotoContentType, personal2.foto)">
+                            <img data-ng-src="{{'data:' + personal2.fotoContentType + ';base64,' + personal2.foto}}" style="max-height: 30px;" alt="personal2 image"/>
                         </a>
-                        <span ng-if="personal.foto"></span>
+                        <span ng-if="personal2.foto"></span>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="personal-detail({id:personal.id})"
+                                    ui-sref="personal-2-detail({id:personal2.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-sm-down"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="personal.edit({id:personal.id})"
+                                    ui-sref="personal-2.edit({id:personal2.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-sm-down"></span>
                             </button>
                             <!--<button type="submit"
-                                    ui-sref="personal.delete({id:personal.id})"
+                                    ui-sref="personal-2.delete({id:personal2.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-sm-down"></span>

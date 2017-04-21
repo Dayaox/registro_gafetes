@@ -1,0 +1,102 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPersonal2Label">Expediente Personal</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.personal2.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.personal2.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_distrito">Zona</label>
+            <input type="text" class="form-control" name="distrito" id="field_distrito"
+                    ng-model="vm.personal2.distrito"
+                    required/>
+            <div ng-show="editForm.distrito.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.distrito.$error.required">
+                    Obligatorio.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_municipio">Coordinacion</label>
+            <input type="text" class="form-control" name="municipio" id="field_municipio"
+                    ng-model="vm.personal2.municipio"
+                    required/>
+            <div ng-show="editForm.municipio.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.municipio.$error.required">
+                    Obligatorio.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_cargo">Cargo</label>
+            <input type="text" class="form-control" name="cargo" id="field_cargo"
+                    ng-model="vm.personal2.cargo"
+                    required/>
+            <div ng-show="editForm.cargo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cargo.$error.required">
+                    Obligatorio.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="vm.personal2.nombre"
+                    required/>
+            <div ng-show="editForm.nombre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nombre.$error.required">
+                    Obligatorio.
+                </p>
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <label class="control-label" for="field_tipo">Tipo</label>
+            <input type="number" class="form-control" name="tipo" id="field_tipo"
+                    ng-model="vm.personal2.tipo"
+                    />
+        </div>-->
+        <div class="form-group" ngf-drop ngf-change="vm.setFoto($file, vm.personal2)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_foto">Foto</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.personal2.fotoContentType + ';base64,' + vm.personal2.foto}}" style="max-height: 100px;" ng-if="vm.personal2.foto" alt="personal2 image"/>
+                <div ng-if="vm.personal2.foto" class="help-block clearfix">
+                    <span class="pull-left">{{vm.personal2.fotoContentType}}, {{vm.byteSize(vm.personal2.foto)}}</span>
+                    <button type="button" ng-click="vm.personal2.foto=null;vm.personal2.fotoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setFoto($file, vm.personal2)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="foto" id="field_foto"
+                    ng-model="vm.personal2.foto"
+                    />
+            <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                    ng-model="vm.personal2.fotoContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancelar</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Guardar</span>
+        </button>
+    </div>
+</form>

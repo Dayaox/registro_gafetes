@@ -9,7 +9,7 @@
             </button>
             <a class="navbar-brand logo" href="#/" ng-click="vm.collapseNavbar()">
 
-                <span>Personal Consejos Municipales</span> <span class="navbar-version"></span>
+                <span>Personal OPLE Veracruz</span> <span class="navbar-version"></span>
             </a>
         </div>
         <div class="navbar-collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()">
@@ -36,7 +36,13 @@
                         <li ui-sref-active="active">
                                 <a ui-sref="personal" ng-click="vm.collapseNavbar()">
                                     <span class="glyphicon glyphicon-book"></span>&nbsp;
-                                    <span >Registro Personal</span>
+                                    <span >Personal Consejos</span>
+                                </a>
+                            </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="personal-2" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-book"></span>&nbsp;
+                                    <span >Personal Operativo</span>
                                 </a>
                             </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->

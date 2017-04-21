@@ -1,0 +1,17 @@
+<div ng-cloak>
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Personal OPLE Veracruz </h1>
+
+            <div ng-switch="vm.isAuthenticated()">
+<img src="https://www.sdpi.org/about_sdpi/staff.png" alt="">
+<br>
+                <div class="alert alert-success" ng-switch-when="true">
+                    Hola "{{vm.account.login}}".
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
